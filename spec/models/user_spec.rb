@@ -19,15 +19,10 @@ describe User do
 		expect(@user).to have(1).errors_on(:last_name)
 	end
 
-	it "is invalid without a email" do 
+	it "is invalid without an email" do 
 		@user.email = " "
 		expect(@user.errors_on(:email)).to include("can't be blank")
 	end
-
-	# it "is invalid without a password" do 
-	# 	@user.password = " "
-	# 	expect(@user).to have(1).errors_on(:password_digest)
-	# end
 
 	it "is invalid with a duplicate email address" do 
 		User.create(first_name: "Damien", last_name: "Marley", email: "ziggymarley@example.com", password: "bufflosoldierAgain")
@@ -48,6 +43,53 @@ describe User do
 	it "is invalid if password is too short" do 
 		@user.password = "123"
 		expect(@user).to have(1).errors_on(:password, :message =>"Password must be at least 6 characers")
+	end
+
+	it "responds to authentication" do 
+		expect(@user).to respond_to(:authenticate)
+	end
+
+	describe "when password not present" do 
+		before(:each) do
+		@jane = User.new(first_name: "Jane", last_name: "Marley", email: "janemarley@example.com", password: " ", password_confirmation: " ")
+		end
+
+		it "is invalid when password not present" do
+			expect(@jane).to have(1).errors_on(:password)
+		end
+	end
+
+	describe "when password do not match" do 
+		before(:each) do
+		@john = User.new(first_name: "John", last_name: "Marley", email: "johnmarley@example.com", password: "awesomesongs", password_confirmation: "wrongpassword")
+		end
+
+		it "is invalid when passwords do not match" do 
+			expect(@john).not_to be_valid
+		end
+	end
+
+	describe "return value of authenticate method" do 
+		before(:each) do 
+			@user = User.new(first_name: "Danny", last_name: "Awesome", email: "awesome@example.com", password: "onlygreatness", password_confirmation: "onlygreatness")
+			@user.save
+		end
+		let(:found_user) { User.find_by_email(@user.email) }
+
+		describe "with valid password" do 
+			it "should equal found user" do 
+				expect(@user).to eq found_user.authenticate(@user.password)
+			end
+		end
+
+		describe "with invalid password" do 
+			let(:invalid_user) { found_user.authenticate("invalid") }
+			it "should not equal invalid user" do 
+				expect(@user).not_to eq invalid_user
+				expect(invalid_user).to be_false
+			end
+		end
+
 	end
 
 end
