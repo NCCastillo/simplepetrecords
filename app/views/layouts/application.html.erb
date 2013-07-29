@@ -13,7 +13,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Simple Pet Records" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -21,6 +21,25 @@
   </head>
 
   <body>
+    <nav class="top-bar">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><%= link_to "Simple Pet Records", static_pages_home_path %></h1>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class ="divider"></li>
+      <li><%= link_to "Sign up", new_user_path %></li>
+      <li class ="divider"></li>
+      <li><%= link_to "About" %></li>
+      <li class ="divider"></li>
+      <li><%= link_to "Contact" %></li>
+    </ul>
+</nav>
 
     <%= yield %>
 
