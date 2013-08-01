@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 		if @user.save
 			flash[:notice] = "The User is successfully saved!"
 			session[:current_user_id] = @user.id
-			redirect_to root_path
+			render "show"
 		else
 			render "new"
 		end
