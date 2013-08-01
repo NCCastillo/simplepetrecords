@@ -1,7 +1,9 @@
 Simplepetrecords::Application.routes.draw do
   root :to => 'static_pages#home'
 
-  resources :users
+  resources :users do 
+  	resources :pets
+  end
   resources :sessions, only: [:new, :create, :destroy]
 
   delete "/logout", to: "sessions#destroy"
