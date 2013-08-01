@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130728015515) do
+ActiveRecord::Schema.define(:version => 20130801160126) do
+
+  create_table "pet_info", :force => true do |t|
+    t.string "name"
+    t.string "gender"
+    t.string "breed"
+    t.string "color"
+    t.string "weight"
+    t.string "license"
+    t.string "microchip"
+    t.string "species"
+    t.string "rabies_id"
+    t.string "neutered"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
