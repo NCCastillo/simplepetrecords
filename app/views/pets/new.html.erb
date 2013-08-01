@@ -1,0 +1,96 @@
+<h2>New Pet</h2>
+<div class="row">
+  <div class="small-9 small-centered large-uncentered columns">
+<%= form_for ([@user,@pet]) do |f| %>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :name, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :name, placeholder: "Lilo Castillo" %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :gender, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :gender, placeholder: "Female or Male"%>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :breed, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :breed, placeholder: "German Shepard" %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :color, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :color, placeholder: "Black" %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :weight, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :weight, placeholder: "55" %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :license, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :license, placeholder: "Dog License # here" %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :microchip, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :microchip, placeholder: "Microchip # " %>
+  </div>
+  </div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :species, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :species, placeholder: "Dog" %>
+  </div>
+  </div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :rabies_id, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :rabies_id, placeholder: "Rabies # here" %>
+  </div>
+  </div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :neutered, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :neutered, placeholder: "Yes" %>
+  </div>
+  </div>
+<div class="row">
+	<div class="small-8 columns">
+    <!-- just for spacing -->
+  </div>
+  <div class="large-4 columns">
+    <%= f.submit "That's my pet" %>
+  </div>
+</div>
+<% end %>
+</div>
+</div>
+

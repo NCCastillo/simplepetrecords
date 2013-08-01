@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	has_secure_password
 
+	has_many :pets
+
 	attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
 
 	validates_presence_of :first_name, :last_name, :email

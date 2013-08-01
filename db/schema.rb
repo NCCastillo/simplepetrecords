@@ -11,19 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801175157) do
+ActiveRecord::Schema.define(:version => 20130801181547) do
 
   create_table "pets", :force => true do |t|
-    t.string "name"
-    t.string "gender"
-    t.string "breed"
-    t.string "color"
-    t.string "weight"
-    t.string "license"
-    t.string "microchip"
-    t.string "species"
-    t.string "rabies_id"
-    t.string "neutered"
+    t.string  "name"
+    t.string  "gender"
+    t.string  "breed"
+    t.string  "color"
+    t.string  "weight"
+    t.string  "license"
+    t.string  "microchip"
+    t.string  "species"
+    t.string  "rabies_id"
+    t.string  "neutered"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|
