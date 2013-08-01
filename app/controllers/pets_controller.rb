@@ -11,12 +11,16 @@ class PetsController < ApplicationController
 		pet.user = dogowner
 		if pet.save 
 			flash[:notice] = "Your pet has been saved!"
-			#pet.user = dogowner
 			redirect_to user_path(dogowner)
 		else
 			flash[:notice] = "Something went wrong. Please try again."
 			redirect_to new_user_pet_path(dogowner)
 		end
+	end
+
+	def show
+		@pet = Pet.find_by_id(params[:id])
+		
 	end
 
 end

@@ -1,8 +1,16 @@
 <h2>Welcome <%= @user.first_name%><h2>
 <h3>My Pets</h3>
 <%= link_to "Create Pet", new_user_pet_path(@user) %>
-
+<p>
+<% if @user.pets.nil?%>
+<p>You have no pets<p>
+<% else %>
 <ol>
-	<li>Put pet name here</li>
+<% @user.pets.each do |pet| %>
+	<li><%= link_to "#{pet.name}", user_pet_path(@user,pet.id)%></li>
+<% end %>
 </ol>
+<% end %>
+</p>
+<h3>My Info</h3>
 
