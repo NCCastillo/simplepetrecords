@@ -39,6 +39,7 @@
       <li><%= link_to "Log in", new_session_path %></li>
       <li class ="divider"></li>
       <% else %>
+      <li><%= link_to "Hello, #{current_user.first_name}", user_path(current_user) %></li>
       <li><%= link_to "Log out", logout_path, method: "delete" %></li>
       <li class ="divider"></li>
       <% end %>
