@@ -12,8 +12,19 @@
 <% end %>
 </p>
 <h3>My Info</h3>
-<%= link_to "Edit info", edit_user_path(@user) %>
-<p>Name: <%= "#{@user.first_name}" + " " + "#{@user.last_name}" %></p>
-<p>Address:</p>
+<p>Name: <%= "#{@user.first_name}" + " " + "#{@user.last_name}" %>|<%= link_to "Edit info", edit_user_path(@user) %></p>
+<% if @user.address.nil?%>
+<p>Address: |<%= link_to "Update info", user_address_path(@user) %></p>
+<p>Please update your address. Thank you.</p>
+<% else %>
+<p>Address: |<%= link_to "Edit info", edit_user_address_path(@user) %></p>
+<%= @user.address.line1 %>
+<br>
+<%= @user.address.line2 %>
+<br>
+<%= @user.address.city %>
+<%= @user.address.state %>
+<%= @user.address.zip %>
+<% end %>
 
 <h3>My Reminders</h3>

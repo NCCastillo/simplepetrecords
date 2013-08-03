@@ -1,4 +1,9 @@
-<!-- gives an undefined method error when used as a partial? Not sure why.. -->
+<div class="row">
+  <div class="small-9 small-centered large-uncentered columns">
+<%= form_for @address, url: user_address_path do |f| %>
+
+<fieldset>
+    <legend>Address</legend>
 <div class="row">
   <div class="small-8 columns">
     <%= f.label :line1, class: "right inline" %>
@@ -39,3 +44,15 @@
     <%= f.text_field :zip %>
   </div>
   </div>
+<div class="row">
+  <div class="small-8 columns">
+    <!-- just for spacing -->
+  </div>
+  <div class="large-4 columns">
+    <%= f.submit "Add address" %>
+  </div>
+</div>
+</fieldset>
+<% end %>
+</div>
+</div>

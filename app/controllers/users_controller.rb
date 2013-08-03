@@ -36,4 +36,33 @@ class UsersController < ApplicationController
 			render "edit"
 		end
 	end
+
+	def address
+		@address = Address.new 
+	end
+
+	def address_create
+		@user = User.find_by_id(params[:id])
+		@user.address = Address.new(params[:address])
+
+		if @user.address.save
+			redirect_to user_path(@user)
+		else
+			render "edit"
+		end
+	end
+
+	def address_edit
+		user = User.find_by_id(params[:id])
+		@address = user.address
+	end
+
+	def address_update
+		@user = User.find_by_id(params[:id])
+		if @user.address.update_attributes(params[:address])
+			render "show"
+		else
+			render "address_edit"
+		end
+	end
 end
