@@ -12,6 +12,7 @@
 <% end %>
 </p>
 <h3>My Info</h3>
+<%= link_to "Edit info", edit_user_path(@user) %>
 <p>Name: <%= "#{@user.first_name}" + " " + "#{@user.last_name}" %></p>
 <p>Address:</p>
 
