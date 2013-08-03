@@ -2,14 +2,16 @@ Simplepetrecords::Application.routes.draw do
   root :to => 'static_pages#home'
 
   resources :users do 
-  	resources :pets
+  	resources :pets do 
+  		resources :vets, only: [:new, :create, :edit, :destroy]
+  	end
   end
   resources :sessions, only: [:new, :create, :destroy]
 
 
   delete "/logout", to: "sessions#destroy"
 
-  #note: code smell here. Think about refactoring to use it own address resource...
+  #note to self: code smell here. Think about refactoring to use its own address resource...
   get "users/:id/address" , to: "users#address", as: "user_address"
   get "users/:id/address/edit" , to: "users#address_edit", as: "edit_user_address"
   post "users/:id/address" , to: "users#address_create", as: "user_address"
