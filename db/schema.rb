@@ -28,17 +28,19 @@ ActiveRecord::Schema.define(:version => 20130803210524) do
   add_index "addresses", ["addressable_type", "addressable_id"], :name => "index_addresses_on_addressable_type_and_addressable_id"
 
   create_table "pets", :force => true do |t|
-    t.string  "name"
-    t.string  "gender"
-    t.string  "breed"
-    t.string  "color"
-    t.string  "weight"
-    t.string  "license"
-    t.string  "microchip"
-    t.string  "species"
-    t.string  "rabies_id"
-    t.string  "neutered"
-    t.integer "user_id"
+    t.string   "name"
+    t.string   "gender"
+    t.string   "breed"
+    t.string   "color"
+    t.string   "weight"
+    t.string   "license"
+    t.string   "microchip"
+    t.string   "species"
+    t.string   "rabies_id"
+    t.string   "neutered"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

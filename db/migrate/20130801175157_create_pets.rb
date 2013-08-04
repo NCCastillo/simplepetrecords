@@ -11,6 +11,8 @@ class CreatePets < ActiveRecord::Migration
   		t.string :species
   		t.string :rabies_id
   		t.string :neutered   
+
+      t.timestamps
   	end
   end
 end

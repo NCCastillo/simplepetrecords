@@ -1,1 +1,85 @@
 <!-- put nested form in here for vet and address -->
+<div class="row">
+  <div class="small-9 small-centered large-uncentered columns">
+<%= form_for @vet, url: user_pet_vets_path do |f| %>
+<fieldset>
+    <legend>Vet</legend>
+    <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :name, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :name %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :phone1, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :phone1 %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :phone2, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :phone2 %>
+  </div>
+  </div>
+  <% f.fields_for @address do |ff| %>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= ff.label :line1, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= ff.text_field :line1 %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= ff.label :line2, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= ff.text_field :line2 %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= ff.label :city, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= ff.text_field :city %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= ff.label :state, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= ff.text_field :state %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= ff.label :zip, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= ff.text_field :zip %>
+  </div>
+  </div>
+
+  <% end %>
+<div class="row">
+  <div class="small-8 columns">
+    <!-- just for spacing -->
+  </div>
+  <div class="large-4 columns">
+    <%= f.submit "Add Vet" %>
+  </div>
+</div>
+</fieldset>
+<% end %>
+</div>
+</div>

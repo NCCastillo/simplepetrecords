@@ -6,15 +6,15 @@ class PetsController < ApplicationController
 	end
 
 	def create
-		dogowner = User.find_by_id(params[:user_id])
+		petowner = User.find_by_id(params[:user_id])
 		pet = Pet.new(params[:pet])
-		pet.user = dogowner
+		pet.user = petowner
 		if pet.save 
 			flash[:notice] = "Your pet has been saved!"
-			redirect_to user_path(dogowner)
+			redirect_to user_path(petowner)
 		else
 			flash[:notice] = "Something went wrong. Please try again."
-			redirect_to new_user_pet_path(dogowner)
+			redirect_to new_user_pet_path(petowner)
 		end
 	end
 

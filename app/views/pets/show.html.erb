@@ -1,4 +1,6 @@
 <h3><%= @pet.name %>'s Info</h3>
+<%= link_to "edit info", edit_user_pet_path %>
+<br>
 Gender: <%= @pet.gender %>
 <br>
 Breed: <%= @pet.breed %>
@@ -15,7 +17,7 @@ Rabies ID: <%= @pet.rabies_id %>
 <br>
 Spayed/Neutered: <%= @pet.neutered %>
 <h3><%= @pet.name %>'s Vet </h3>
-Vet info here
+<%= link_to "Create Vet", new_user_pet_vet_path(@pet.user.id, @pet) %>
 
 <h3><%= @pet.name %>'s Insurance </h3>
 Pet insurance info here
