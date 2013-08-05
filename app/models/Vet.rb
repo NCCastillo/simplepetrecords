@@ -6,7 +6,7 @@ class Vet < ActiveRecord::Base
 	#and still no cigar! The address part of the form doesn't render in the view.
 	#will have to come up with another way for now.
 	
-	#accepts_nested_attributes_for :address
+	accepts_nested_attributes_for :address
 
-	attr_accessible :name, :phone1, :phone2 #, :address_attributes
+	attr_accessible :name, :phone1, :phone2 , :address_attributes
 end
