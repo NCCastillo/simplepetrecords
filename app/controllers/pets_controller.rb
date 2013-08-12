@@ -20,7 +20,23 @@ class PetsController < ApplicationController
 
 	def show
 		@pet = Pet.find_by_id(params[:id])
-		
+	end
+
+	def edit
+		@user = User.find_by_id(params[:user_id])
+		@pet = @user.pets.find_by_id(params[:id])
+	end
+
+	def update
+		user = User.find_by_id(params[:user_id])
+		@pet = Pet.find_by_id(params[:id])
+		if @pet.update_attributes(params[:pet])
+			flash[:notice] = "Update was successful"
+			redirect_to user_pet_path(user, @pet)
+		else
+			flash[:notice] = "Something went wrong. Please try again."
+			render "edit"
+		end
 	end
 
 end
