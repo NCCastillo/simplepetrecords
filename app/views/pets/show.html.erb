@@ -17,8 +17,25 @@ Rabies ID: <%= @pet.rabies_id %>
 <br>
 Spayed/Neutered: <%= @pet.neutered %>
 <h3><%= @pet.name %>'s Vet </h3>
+<% if @pet.vet.nil? %>
 <%= link_to "Create Vet", new_user_pet_vet_path(@pet.user.id, @pet) %>
-
+<br>
+<% else %> 
+<%= link_to "Edit Vet", edit_user_pet_vet_path(@pet, @pet.vet.id) %>
+<br>
+Name:<%= @pet.vet.name%>
+<br>
+Phone 1: <%= @pet.vet.phone1%>
+<br>
+Phone 2: <%= @pet.vet.phone2%>
+<br>
+Address:
+<%= @pet.vet.address.line1 %>
+<%= @pet.vet.address.line2 %>
+<%= @pet.vet.address.city %>
+<%= @pet.vet.address.state %>
+<%= @pet.vet.address.zip %>
+<% end %>
 <h3><%= @pet.name %>'s Insurance </h3>
 Pet insurance info here
 
