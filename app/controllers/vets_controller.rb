@@ -6,12 +6,12 @@ class VetsController < ApplicationController
 
 	def create
 		@vet = Vet.new(params[:vet])
-		pet = params[:pet_id]
+		@vet.pet_id = params[:pet_id]
 		user = params[:user_id]
 
 		if @vet.save
 			flash[:notice] = "Vet info saved"
-			redirect_to user_pet_path(user,pet)
+			redirect_to user_pet_path(user,@vet.pet_id)
 		else
 			flash[:notice] = "Something went wrong please try again."
 			render "new"

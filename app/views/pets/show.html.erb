@@ -21,7 +21,7 @@ Spayed/Neutered: <%= @pet.neutered %>
 <%= link_to "Create Vet", new_user_pet_vet_path(@pet.user.id, @pet) %>
 <br>
 <% else %> 
-<%= link_to "Edit Vet", edit_user_pet_vet_path(@pet, @pet.vet.id) %>
+<%= link_to "Edit Vet", edit_user_pet_vet_path(@pet.user.id, @pet, @pet.vet.id) %>
 <br>
 Name:<%= @pet.vet.name%>
 <br>
