@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814183745) do
+ActiveRecord::Schema.define(:version => 20130814192039) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line1"
@@ -27,20 +27,20 @@ ActiveRecord::Schema.define(:version => 20130814183745) do
 
   add_index "addresses", ["addressable_type", "addressable_id"], :name => "index_addresses_on_addressable_type_and_addressable_id"
 
+  create_table "conditions", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "pet_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "immunizations", :force => true do |t|
     t.string   "type"
     t.date     "date"
     t.date     "next_due"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "pet_id"
-  end
-
-  create_table "known_conditions", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
     t.integer  "pet_id"
   end
 
@@ -78,17 +78,6 @@ ActiveRecord::Schema.define(:version => 20130814183745) do
     t.datetime "updated_at",      :null => false
   end
 
-  create_table "vet_visits", :force => true do |t|
-    t.date     "date"
-    t.string   "description"
-    t.string   "veterinarian"
-    t.string   "diagnosis"
-    t.string   "notes"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.integer  "pet_id"
-  end
-
   create_table "vets", :force => true do |t|
     t.string   "name"
     t.string   "phone1"
@@ -96,6 +85,17 @@ ActiveRecord::Schema.define(:version => 20130814183745) do
     t.integer  "pet_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "visits", :force => true do |t|
+    t.date     "date"
+    t.string   "description"
+    t.string   "veterinarian"
+    t.string   "diagnosis"
+    t.string   "notes"
+    t.integer  "pet_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
