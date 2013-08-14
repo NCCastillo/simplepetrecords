@@ -1,6 +1,6 @@
-class CreateVetVisits < ActiveRecord::Migration
+class CreateVisits < ActiveRecord::Migration
   def change
-    create_table :vet_visits do |t|
+    create_table :visits do |t|
       t.date   :date
       t.string :description
       t.string :veterinarian
@@ -9,5 +9,4 @@ class CreateVetVisits < ActiveRecord::Migration
 
       t.timestamps
     end
-  end
 end
