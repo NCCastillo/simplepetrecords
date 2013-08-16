@@ -11,6 +11,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'zurb-foundation'
   gem 'uglifier', '>= 1.0.3'
+  gem 'foundation-icons-sass-rails'
 end
 
 gem 'jquery-rails'

@@ -1,0 +1,48 @@
+    <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :date, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.date_select :date %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :description, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :description %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :veterinarian, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :veterinarian %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :diagnosis, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :diagnosis    %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :notes, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_area :notes %>
+  </div>
+  </div>
+<div class="row">
+  <div class="small-8 columns">
+    <!-- just for spacing -->
+  </div>
+  <div class="large-4 columns">
+    <%= f.submit "Save", class: "small button" %>
+  </div>
+</div>

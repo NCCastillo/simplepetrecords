@@ -13,6 +13,7 @@
       <th width="150">Veterinarian</th>
       <th width="150">Diagnosis</th>
       <th width="150">Notes</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,7 @@
       <td>Content Goes Here</td>
       <td>Content Goes Here</td>
       <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
     </tr>
     <tr>
       <td>Content Goes Here</td>
@@ -29,6 +31,7 @@
       <td>Content Goes Here</td>
       <td>Content Goes Here</td>
       <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
     </tr>
     <tr>
       <td>Content Goes Here</td>
@@ -36,30 +39,122 @@
       <td>Content Goes Here</td>
       <td>Content Goes Here</td>
       <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
     </tr>
   </tbody>
 </table>
       </p>
       <a href="#" class="tiny button">New Record</a>
-      <a href="#" class="tiny button">Edit Record</a>
     </div>
   </section>
   <section>
     <p class="title" data-section-title><a href="#">Immunizations</a></p>
     <div class="content" data-section-content>
-      <p>Content of section 2.</p>
+      <p>
+        <table>
+  <thead>
+    <tr>
+      <th width="100">Date</th>
+      <th>Type</th>
+      <th width="150">Next Due</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+  </tbody>
+</table>
+      </p>
+      <a href="#" class="tiny button">New Record</a>
     </div>
   </section>
  <section>
     <p class="title" data-section-title><a href="#">Medications</a></p>
     <div class="content" data-section-content>
-      <p>Content of section 3.</p>
+      <p>
+        <table>
+  <thead>
+    <tr>
+      <th width="100">Date</th>
+      <th>Description</th>
+      <th width="150">Dosage</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td>Content Goes Here</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+  </tbody>
+</table>
+      </p>
+      <a href="#" class="tiny button">New Record</a>
     </div>
   </section>
   <section>
     <p class="title" data-section-title><a href="#">Known Conditions</a></p>
     <div class="content" data-section-content>
-      <p>Content of section 3.</p>
+      <p>
+        <table>
+  <thead>
+    <tr>
+      <th width="100">Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+    <tr>
+      <td>Content Goes Here</td>
+      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    </tr>
+  </tbody>
+</table>
+      </p>
+      <a href="#" class="tiny button">New Record</a>
     </div>
   </section>
 </div>
@@ -88,3 +183,10 @@
 
 <!-- Disabled Class -->
 <a href="#" class="button disabled">Disabled Button</a>
+<br>
+Icon fonts
+<i class="general foundicon-[edit]"></i>
+<i class="general foundicon-[trash]"></i>
+<i class="general-enclosed foundicon-[folder]"></i>
+<i class="social foundicon-[twitter]"></i>
+<i class="accessibility foundicon-[wheelchair]"></i>

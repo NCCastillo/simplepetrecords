@@ -41,35 +41,60 @@ Pet insurance info here
 
 <h3><%= @pet.name %>'s Records </h3>
 <div class="row">
-  <div class="small-8 columns">
+  <div class="small-12 columns">
 <div class="section-container tabs" data-section="tabs">
   <section>
     <p class="title" data-section-title><a href="#">Vet Visits</a></p>
     <div class="content" data-section-content>
-      <p>Content of section 1.</p>
+      <p>
+        <% if @pet.visits.empty? %>
+          <%= render "message" %>
+        <% else %>
+          <%= render partial: "visits", locals: {pet: @pet } %>
+        <% end %>
+      </p>
+      <%= link_to "New Record", new_user_pet_visit_path(@pet.user.id, @pet), class: "tiny button" %>
     </div>
   </section>
   <section>
     <p class="title" data-section-title><a href="#">Immunizations</a></p>
     <div class="content" data-section-content>
-      <p>Content of section 2.</p>
+      <p>
+      <% if @pet.immunizations.empty? %>
+          <%= render "message" %>
+        <% else %>
+          <%= render "immunizations" %>
+        <% end %>
+      </p>
+      <a href="#" class="tiny button">New Record</a>
     </div>
   </section>
   <section>
     <p class="title" data-section-title><a href="#">Medications</a></p>
     <div class="content" data-section-content>
-      <p>Content of section 3.</p>
+      <p>
+        <% if @pet.medications.empty? %>
+          <%= render "message" %>
+        <% else %>
+          <%= render "medications" %>
+        <% end %>
+      </p>
+      <a href="#" class="tiny button">New Record</a>
     </div>
   </section>
   <section>
     <p class="title" data-section-title><a href="#">Known Conditions</a></p>
     <div class="content" data-section-content>
-      <p>Content of section 4.</p>
+      <p>
+        <% if @pet.conditions.empty? %>
+          <%= render "message" %>
+        <% else %>
+          <%= render "conditions" %>
+        <% end %>
+      </p>
+      <a href="#" class="tiny button">New Record</a>
     </div>
   </section>
 </div>
-</div>
-<div class="small-4 columns"> 
-  <!-- just for spacing -->
 </div>
 </div>

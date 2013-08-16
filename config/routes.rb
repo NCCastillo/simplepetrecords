@@ -4,6 +4,7 @@ Simplepetrecords::Application.routes.draw do
   resources :users do 
   	resources :pets do 
   		resources :vets, only: [:new, :create, :edit, :update, :destroy]
+      resources :visits, only: [:new, :create, :edit, :update, :destroy]
   	end
   end
   resources :sessions, only: [:new, :create, :destroy]
