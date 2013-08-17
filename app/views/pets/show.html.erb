@@ -1,47 +1,6 @@
-<h3><%= @pet.name %>'s Info</h3>
-<%= link_to "Edit info", edit_user_pet_path %>
-<br>
-Gender: <%= @pet.gender %>
-<br>
-Breed: <%= @pet.breed %>
-<br>
-Weight: <%= @pet.weight %> lbs
-<br>
-License #: <%= @pet.license %>
-<br>
-Microchip #: <%= @pet.microchip %>
-<br>
-Species: <%= @pet.species %>
-<br>
-Rabies ID: <%= @pet.rabies_id %>
-<br>
-Spayed/Neutered: <%= @pet.neutered %>
-<h3><%= @pet.name %>'s Vet </h3>
-<% if @pet.vet.nil? %>
-<%= link_to "Create Vet", new_user_pet_vet_path(@pet.user.id, @pet) %>
-<br>
-<% else %> 
-<%= link_to "Edit Vet", edit_user_pet_vet_path(@pet.user.id, @pet, @pet.vet.id) %>
-<br>
-Name:<%= @pet.vet.name%>
-<br>
-Phone 1: <%= @pet.vet.phone1%>
-<br>
-Phone 2: <%= @pet.vet.phone2%>
-<br>
-Address:
-<%= @pet.vet.address.line1 %>
-<%= @pet.vet.address.line2 %>
-<%= @pet.vet.address.city %>
-<%= @pet.vet.address.state %>
-<%= @pet.vet.address.zip %>
-<% end %>
-<h3><%= @pet.name %>'s Insurance </h3>
-Pet insurance info here
-
-<h3><%= @pet.name %>'s Records </h3>
 <div class="row">
   <div class="small-12 columns">
+  <h3><%= @pet.name %>'s Records </h3>
 <div class="section-container tabs" data-section="tabs">
   <section>
     <p class="title" data-section-title><a href="#">Vet Visits</a></p>
@@ -98,3 +57,42 @@ Pet insurance info here
 </div>
 </div>
 </div>
+
+<h3><%= @pet.name %>'s Info</h3>
+<%= link_to "Edit info", edit_user_pet_path %>
+<br>
+Gender: <%= @pet.gender %>
+<br>
+Breed: <%= @pet.breed %>
+<br>
+Weight: <%= @pet.weight %> lbs
+<br>
+License #: <%= @pet.license %>
+<br>
+Microchip #: <%= @pet.microchip %>
+<br>
+Species: <%= @pet.species %>
+<br>
+Rabies ID: <%= @pet.rabies_id %>
+<br>
+Spayed/Neutered: <%= @pet.neutered %>
+<h3><%= @pet.name %>'s Vet </h3>
+<% if @pet.vet.nil? %>
+<%= link_to "Create Vet", new_user_pet_vet_path(@pet.user.id, @pet) %>
+<br>
+<% else %> 
+<%= link_to "Edit Vet", edit_user_pet_vet_path(@pet.user.id, @pet, @pet.vet.id) %>
+<br>
+Name:<%= @pet.vet.name%>
+<br>
+Phone 1: <%= @pet.vet.phone1%>
+<br>
+Phone 2: <%= @pet.vet.phone2%>
+<br>
+Address:
+<%= @pet.vet.address.line1 %>
+<%= @pet.vet.address.line2 %>
+<%= @pet.vet.address.city %>
+<%= @pet.vet.address.state %>
+<%= @pet.vet.address.zip %>
+<% end %>
