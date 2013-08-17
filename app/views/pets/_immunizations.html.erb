@@ -7,12 +7,14 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-  <td>Content Goes Here</td>
-  <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-  <td>Content Goes Here</td>
-  <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
+    <tbody>
+    <% pet.immunizations.each do |p| %>
+<tr>
+  <td><%= p.date %></td>
+  <td><%= p.itype %></td>
+  <td><%= p.next_due %></td>
+  <td><%= link_to 'Edit', edit_user_pet_immunization_path(pet.user_id, pet, p.id)%> <%= link_to 'Delete', user_pet_immunization_path(pet.user_id, pet, p.id), confirm: "Are you sure?", method: :delete%></td>
 </tr>
-  </tbody>
+<% end %>
+</tbody>
 </table>

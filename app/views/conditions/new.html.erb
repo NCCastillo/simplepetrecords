@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="small-9 small-centered large-uncentered columns">
+<%= form_for @condition, url: user_pet_conditions_path do |f| %>
+<fieldset>
+    <legend>Conditions</legend>
+    <%= render partial: "condition", locals: { f: f } %>
+</fieldset>
+<% end %>
+</div>
+</div>

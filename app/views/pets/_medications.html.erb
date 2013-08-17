@@ -8,10 +8,13 @@
     </tr>
   </thead>
   <tbody>
-  <tr>
-  <td>Content Goes Here</td>
-  <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-  <td>Content Goes Here</td>
-  <td><%= link_to 'Edit'%> <%= link_to 'Delete'%></td>
-  </tbody>
+    <% pet.medications.each do |p| %>
+<tr>
+  <td><%= p.name %></td>
+  <td><%= p.description %></td>
+  <td><%= p.dosage %></td>
+  <td><%= link_to 'Edit', edit_user_pet_medication_path(pet.user_id, pet, p.id)%> <%= link_to 'Delete', user_pet_medication_path(pet.user_id, pet, p.id), confirm: "Are you sure?", method: :delete%></td>
+</tr>
+<% end %>
+</tbody>
 </table>

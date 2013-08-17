@@ -50,7 +50,7 @@ Pet insurance info here
         <% if @pet.visits.empty? %>
           <%= render "message" %>
         <% else %>
-          <%= render partial: "visits", locals: {pet: @pet } %>
+          <%= render partial: "visits", locals: { pet: @pet } %>
         <% end %>
       </p>
       <%= link_to "New Record", new_user_pet_visit_path(@pet.user.id, @pet), class: "tiny button" %>
@@ -63,10 +63,10 @@ Pet insurance info here
       <% if @pet.immunizations.empty? %>
           <%= render "message" %>
         <% else %>
-          <%= render "immunizations" %>
+          <%= render partial: "immunizations", locals: { pet: @pet } %>
         <% end %>
       </p>
-      <a href="#" class="tiny button">New Record</a>
+      <%= link_to "New Record", new_user_pet_immunization_path(@pet.user.id, @pet), class: "tiny button" %>
     </div>
   </section>
   <section>
@@ -76,10 +76,10 @@ Pet insurance info here
         <% if @pet.medications.empty? %>
           <%= render "message" %>
         <% else %>
-          <%= render "medications" %>
+          <%= render  partial: "medications", locals: { pet: @pet } %>
         <% end %>
       </p>
-      <a href="#" class="tiny button">New Record</a>
+      <%= link_to "New Record", new_user_pet_medication_path(@pet.user.id, @pet), class: "tiny button" %>
     </div>
   </section>
   <section>
@@ -89,10 +89,10 @@ Pet insurance info here
         <% if @pet.conditions.empty? %>
           <%= render "message" %>
         <% else %>
-          <%= render "conditions" %>
+          <%= render partial: "conditions", locals: { pet: @pet } %>
         <% end %>
       </p>
-      <a href="#" class="tiny button">New Record</a>
+      <%= link_to "New Record", new_user_pet_condition_path(@pet.user.id, @pet), class: "tiny button" %>
     </div>
   </section>
 </div>

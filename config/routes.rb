@@ -5,6 +5,9 @@ Simplepetrecords::Application.routes.draw do
   	resources :pets do 
   		resources :vets, only: [:new, :create, :edit, :update, :destroy]
       resources :visits, only: [:new, :create, :edit, :update, :destroy]
+      resources :immunizations, only: [:new, :create, :edit, :update, :destroy]
+      resources :medications, only: [:new, :create, :edit, :update, :destroy]
+      resources :conditions, only: [:new, :create, :edit, :update, :destroy]
   	end
   end
   resources :sessions, only: [:new, :create, :destroy]

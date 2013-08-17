@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :date, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.date_select :date %>
+  </div>
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= f.label :itype, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.text_field :itype %>
+  </div>
+  </div>
+  <div class="row">
+  <div class="small-8 columns">
+    <%= f.label :next_due, class: "right inline" %>
+  </div>
+  <div class="large-4 columns">
+    <%= f.date_select  :next_due %>
+  </div>
+  </div>
+<div class="row">
+  <div class="small-8 columns">
+    <!-- just for spacing -->
+  </div>
+  <div class="large-4 columns">
+    <%= f.submit "Save", class: "small button" %>
+  </div>
+</div>

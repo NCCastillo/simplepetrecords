@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814192039) do
+ActiveRecord::Schema.define(:version => 20130817185630) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line1"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20130814192039) do
   end
 
   create_table "immunizations", :force => true do |t|
-    t.string   "type"
+    t.string   "itype"
     t.date     "date"
     t.date     "next_due"
     t.datetime "created_at", :null => false
