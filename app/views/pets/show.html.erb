@@ -1,65 +1,68 @@
 <div class="row">
   <div class="small-12 columns">
-  <h3><%= @pet.name %>'s Records </h3>
-<div class="section-container tabs" data-section="tabs">
-  <section>
-    <p class="title" data-section-title><a href="#">Vet Visits</a></p>
-    <div class="content" data-section-content>
-      <p>
-        <% if @pet.visits.empty? %>
-          <%= render "message" %>
-        <% else %>
-          <%= render partial: "visits", locals: { pet: @pet } %>
-        <% end %>
-      </p>
-      <%= link_to "New Record", new_user_pet_visit_path(@pet.user.id, @pet), class: "tiny button" %>
+  <fieldset>
+      <legend><h3><%= @pet.name %>'s Records </h3></legend>
+  <div class="section-container tabs" data-section="tabs">
+    <section>
+      <p class="title" data-section-title><a href="#">Vet Visits</a></p>
+      <div class="content" data-section-content>
+        <p>
+          <% if @pet.visits.empty? %>
+            <%= render "message" %>
+          <% else %>
+            <%= render partial: "visits", locals: { pet: @pet } %>
+          <% end %>
+        </p>
+        <%= link_to "New Record", new_user_pet_visit_path(@pet.user.id, @pet), class: "tiny button" %>
+      </div>
+    </section>
+    <section>
+      <p class="title" data-section-title><a href="#">Immunizations</a></p>
+      <div class="content" data-section-content>
+        <p>
+        <% if @pet.immunizations.empty? %>
+            <%= render "message" %>
+          <% else %>
+            <%= render partial: "immunizations", locals: { pet: @pet } %>
+          <% end %>
+        </p>
+        <%= link_to "New Record", new_user_pet_immunization_path(@pet.user.id, @pet), class: "tiny button" %>
+      </div>
+    </section>
+    <section>
+      <p class="title" data-section-title><a href="#">Medications</a></p>
+      <div class="content" data-section-content>
+        <p>
+          <% if @pet.medications.empty? %>
+            <%= render "message" %>
+          <% else %>
+            <%= render  partial: "medications", locals: { pet: @pet } %>
+          <% end %>
+        </p>
+        <%= link_to "New Record", new_user_pet_medication_path(@pet.user.id, @pet), class: "tiny button" %>
+      </div>
+    </section>
+    <section>
+      <p class="title" data-section-title><a href="#">Known Conditions</a></p>
+      <div class="content" data-section-content>
+        <p>
+          <% if @pet.conditions.empty? %>
+            <%= render "message" %>
+          <% else %>
+            <%= render partial: "conditions", locals: { pet: @pet } %>
+          <% end %>
+        </p>
+        <%= link_to "New Record", new_user_pet_condition_path(@pet.user.id, @pet), class: "tiny button" %>
+      </div>
+      </section>
     </div>
-  </section>
-  <section>
-    <p class="title" data-section-title><a href="#">Immunizations</a></p>
-    <div class="content" data-section-content>
-      <p>
-      <% if @pet.immunizations.empty? %>
-          <%= render "message" %>
-        <% else %>
-          <%= render partial: "immunizations", locals: { pet: @pet } %>
-        <% end %>
-      </p>
-      <%= link_to "New Record", new_user_pet_immunization_path(@pet.user.id, @pet), class: "tiny button" %>
-    </div>
-  </section>
-  <section>
-    <p class="title" data-section-title><a href="#">Medications</a></p>
-    <div class="content" data-section-content>
-      <p>
-        <% if @pet.medications.empty? %>
-          <%= render "message" %>
-        <% else %>
-          <%= render  partial: "medications", locals: { pet: @pet } %>
-        <% end %>
-      </p>
-      <%= link_to "New Record", new_user_pet_medication_path(@pet.user.id, @pet), class: "tiny button" %>
-    </div>
-  </section>
-  <section>
-    <p class="title" data-section-title><a href="#">Known Conditions</a></p>
-    <div class="content" data-section-content>
-      <p>
-        <% if @pet.conditions.empty? %>
-          <%= render "message" %>
-        <% else %>
-          <%= render partial: "conditions", locals: { pet: @pet } %>
-        <% end %>
-      </p>
-      <%= link_to "New Record", new_user_pet_condition_path(@pet.user.id, @pet), class: "tiny button" %>
-    </div>
-  </section>
+  </div>
+</fieldset>
 </div>
-</div>
-</div>
-
-<h3><%= @pet.name %>'s Info</h3>
-<%= link_to "Edit info", edit_user_pet_path %>
+<div class="row">
+  <div class="small-6 columns">
+<fieldset>
+      <legend><h3><%= @pet.name %>'s Info </h3></legend>
 <br>
 Gender: <%= @pet.gender %>
 <br>
@@ -76,12 +79,19 @@ Species: <%= @pet.species %>
 Rabies ID: <%= @pet.rabies_id %>
 <br>
 Spayed/Neutered: <%= @pet.neutered %>
-<h3><%= @pet.name %>'s Vet </h3>
+<br>
+<br>
+<%= link_to "Edit info", edit_user_pet_path, class: "tiny button" %>
+    </fieldset>
+  </div>
+  <div class="small-6 columns">
+<fieldset>
+      <legend><h3><%= @pet.name %>'s Vet </h3></legend>
 <% if @pet.vet.nil? %>
-<%= link_to "Create Vet", new_user_pet_vet_path(@pet.user.id, @pet) %>
+<p>Please add your veterinarian's information<p>
+<%= link_to "Create Vet", new_user_pet_vet_path(@pet.user.id, @pet), class: "tiny button" %>
 <br>
 <% else %> 
-<%= link_to "Edit Vet", edit_user_pet_vet_path(@pet.user.id, @pet, @pet.vet.id) %>
 <br>
 Name:<%= @pet.vet.name%>
 <br>
@@ -95,4 +105,14 @@ Address:
 <%= @pet.vet.address.city %>
 <%= @pet.vet.address.state %>
 <%= @pet.vet.address.zip %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= link_to "Edit Vet", edit_user_pet_vet_path(@pet.user.id, @pet), class: "tiny button" %>
 <% end %>
+</fieldset>
+</div>
+</div>

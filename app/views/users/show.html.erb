@@ -1,28 +1,48 @@
-<h3>My Pets</h3>
-<%= link_to "Create Pet", new_user_pet_path(@user) %>
-<p>
-<% if @user.pets.nil?%>
-<p>You have no pets<p>
-<% else %>
-<ol>
-<% @user.pets.each do |pet| %>
-	<li><%= link_to "#{pet.name}", user_pet_path(@user,pet.id)%></li>
-<% end %>
-</ol>
-<% end %>
-</p>
-<h3>My Info</h3>
-<p>Name: <%= "#{@user.first_name}" + " " + "#{@user.last_name}" %>|<%= link_to "Edit info", edit_user_path(@user) %></p>
-<% if @user.address.nil?%>
-<p>Address: |<%= link_to "Update info", user_address_path(@user) %></p>
-<p>Please update your address. Thank you.</p>
-<% else %>
-<p>Address: |<%= link_to "Edit info", edit_user_address_path(@user) %></p>
-<%= @user.address.line1 %>
-<br>
-<%= @user.address.line2 %>
-<br>
-<%= @user.address.city %>
-<%= @user.address.state %>
-<%= @user.address.zip %>
-<% end %>
+<div class="row">
+  <div class="small-12 columns">
+    <fieldset>
+      <legend><h3>My Pets</h3></legend>
+      <% if @user.pets.nil?%>
+        <p>You have no pets<p>
+      <% else %>
+        <ul class="small-block-grid-4">
+        <% @user.pets.each do |pet| %>
+          <li><%= image_tag("animal_logo.jpg", size: "75x75" ) %> <%= link_to "#{pet.name}", user_pet_path(@user,pet.id)%></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <%= link_to "Create Pet", new_user_pet_path(@user), class: "tiny button" %>
+    </fieldset>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <fieldset>
+      <legend><h3>My Info</h3></legend>
+      <div class="small-6 columns">
+        Name:<br>
+        <%= "#{@user.first_name}" + " " + "#{@user.last_name}" %><br><br>
+        Email:<br>
+        <%= @user.email %><br><br>
+        <p><%= link_to "Edit info", edit_user_path(@user), class: "tiny button" %></p>
+      </div>
+      <div class="small-6 columns">
+        <% if @user.address.nil?%>
+          Address:
+          <p>Please update your address. Thank you.</p>
+          <p><%= link_to "Update info", user_address_path(@user), class: "tiny button" %></p>
+        <% else %>
+          Address:<br>
+          <%= @user.address.line1 %>
+          <br>
+          <%= @user.address.line2 %>
+          <br>
+          <%= @user.address.city %>
+          <%= @user.address.state %>
+          <%= @user.address.zip %>
+          <p><%= link_to "Edit address", edit_user_address_path(@user), class: "tiny button" %></p>
+        <% end %><br><br>
+    </div>
+    </fieldset>
+  </div>
+</div>
