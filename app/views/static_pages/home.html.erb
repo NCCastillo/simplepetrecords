@@ -1,3 +1,74 @@
-<h2>Simple Pet Records</h2>
-<p>This is a web application that provides pet owners the ability to record all their pet information online.</p>
-<p>Currently a WORK IN PROGRESS.  Some things will look funny, not work properly and probably break as this will be going through a lot of iterations.</p>
+<br>
+<div class="row">
+  <div class="small-8 large-centered columns">
+    <ul data-orbit>
+  <li>
+    <%= image_tag("lilo.jpg") %>
+    <div class="orbit-caption"></div>
+  </li>
+  <li>
+    <%= image_tag("lola.jpg") %>
+    <div class="orbit-caption"></div>
+  </li>
+  <li>
+    <%= image_tag("rufus.jpg") %>
+    <div class="orbit-caption"></div>
+  </li>
+</ul>
+  </div> 
+</div>
+<div class="row">
+  <div class="small-12 columns">
+  <!-- just for spacing -->
+  <p></p>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+  <!-- just for spacing -->
+  </div>
+</div>
+<div class="row">
+  <div class="small-4 columns">
+    <div class="panel">
+      <h3 class="subheader">Record Vet Visits</h3>
+        <ul class="no-bullet">
+          <h5 class="subheader"><li>Description</li></h5>
+          <h5 class="subheader"><li>Diagnoses</li></h5>
+          <h5 class="subheader"><li>Notes</li></h5>
+        </ul>
+    </div>
+  </div>
+  <div class="small-4 columns">
+    <div class="panel">
+      <h3 class="subheader">Track Medications</h3>
+      <ul class="no-bullet">
+          <h5 class="subheader"><li>Name of Medication</li></h5>
+          <h5 class="subheader"><li>Dosage</li></h5>
+          <h5 class="subheader"><li>Description of medication</li></h5>
+        </ul>
+    </div>
+  </div>
+  <div class="small-4 columns">
+    <div class="panel">
+      <h3 class="subheader">Store Vet Info</h3>
+      <ul class="no-bullet">
+          <h5 class="subheader"><li>Name of Veterinarian</li></h5>
+          <h5 class="subheader"><li>Address</li></h5>
+          <h5 class="subheader"><li>Phone number</li></h5>
+        </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+  <!-- just for spacing -->
+  <p></p>
+  </div>
+</div>
+<div class="row">
+  <div class="small-6 large-centered columns"><%= link_to "Sign up for free!", new_user_path, class: "large button expand" %>
+</div>
+</div>
+
+

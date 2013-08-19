@@ -15,12 +15,15 @@
 
   	<title><%= content_for?(:title) ? yield(:title) : "Simple Pet Records" %></title>
 
-  	<%= stylesheet_link_tag    "application" %>
+  	<%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Bubbler+One" %>
+    <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" %>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
+    <div class="fixed">
     <nav class="top-bar">
   <ul class="title-area">
     <!-- Title Area -->
@@ -40,6 +43,7 @@
       <li class ="divider"></li>
       <% else %>
       <li><%= link_to "Hello, #{current_user.first_name}", user_path(current_user) %></li>
+      <li class ="divider"></li>
       <li><%= link_to "Log out", logout_path, method: "delete" %></li>
       <li class ="divider"></li>
       <% end %>
@@ -48,11 +52,13 @@
       <li><%= link_to "Contact", static_pages_contact_path %></li>
     </ul>
 </nav>
+</div>
+
 <%=flash[:notice]%>
 
     <%= yield %>
 
     
-    <%= javascript_include_tag "application" %>
+    
   </body>
 </html>
