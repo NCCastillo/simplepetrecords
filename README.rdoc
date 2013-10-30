@@ -2,8 +2,6 @@
 
 A web application that provides pet owners the ability to record all their pet information online.
 
-This is a [WIP] - Work In Progress
-
 == MVP
 The MVP will provide the pet owners the following:
 
@@ -14,6 +12,10 @@ The MVP will provide the pet owners the following:
 - Vet profile
 - Pet records
 - Reminders
+
+== DEMO
+To view demo go here - http://simplepetrecords.heroku.com
+
 
 Developed by @ncarloscastillo
 http://www.nestorcarloscastillo.com
