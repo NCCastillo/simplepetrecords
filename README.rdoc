@@ -16,6 +16,10 @@ The MVP will provide the pet owners the following:
 == DEMO
 To view demo go here - http://simplepetrecords.heroku.com
 
+example user: jenny.dough@example.com
+
+pwd: Example1
+
 
 Developed by @ncarloscastillo
 http://www.nestorcarloscastillo.com
